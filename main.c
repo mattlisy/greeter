@@ -4,13 +4,10 @@
 #include <time.h>
 #include "List.h"
 
-#define MAX_QUOTE_LENGTH 255
+#define MAX_QUOTE_LENGTH 1024
 
 /* === Todo ===
 
-- give unique quote 
-	- implement a get random func in List.h
-	- implement a destory list in List.h
 - ascii art 
 
 --------------------
@@ -29,6 +26,8 @@ void grab_quote() {
 	}	
 	
 	fclose(quotes_file);		
+	printf("\n  %s\n", get_random_List(quote_bank));
+	destory_List(&quote_bank);
 }
 
 

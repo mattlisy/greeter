@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "List.h"
 
 static void resize(List* lst) { 
@@ -40,6 +41,15 @@ void append_List(List* lst, char* string) {
 	lst->base[lst->size++] = strdup(string);
 }
 
+char* get_random_List(const List lst) {
+	srand(time(NULL));
+	int random_index  = rand() % lst.size;
+	return lst.base[random_index];
+		
+}
 
-
+void destory_List(List* lst) {
+	free(lst->base);
+	lst->size = lst->capacity = 0;
+}
 

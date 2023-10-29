@@ -18,5 +18,8 @@ size_t sizeof_List(const List lst);
 
 void append_List(List* lst, char* string);
 
+char* get_random_List(const List lst);
+
+void destory_List(List* lst);
 
 #endif  
